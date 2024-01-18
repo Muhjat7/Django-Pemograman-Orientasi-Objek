@@ -8,7 +8,7 @@ Kelompok E-commerce HP
 - Syahril Haryanto (312210668) 
 - Satria Dwi Aprianto (312210490) 
 - Fajri Al Jauhari (312210476) 
-- Muhammad Dari Rizqullah (312210527)
+- Muhammad Raqi Rizqullah (312210527)
    Kelas :TI. 22.A.5
 
   ## untuk link youtube klik disini
