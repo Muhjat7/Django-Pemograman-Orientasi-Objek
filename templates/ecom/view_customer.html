@@ -44,16 +44,23 @@ facebook : fb.com/sumit.luv
       </thead>
       {% for c in customers %}
       <tr>
-        <td> {{c.get_name}}</td>
-        <td> <img src="{% static c.profile_pic.url %}" alt="Profile Pic" height="40px" width="40px" /></td>
-        <td>{{c.mobile}}</td>
-        <td>{{c.address}}</td>
-        <td><a class="btn btn-primary btn-xs" href="{% url 'update-customer' c.id  %}"><span class="glyphicon glyphicon-edit"></span></a></td>
-        <td><a class="btn btn-danger btn-xs" href="{% url 'delete-customer' c.id  %}"><span class="glyphicon glyphicon-trash"></span></a></td>
-
+        <td>{{ c.get_name }}</td>
+        <td>
+          {% if c.profile_pic %}
+            <img src="{% static c.profile_pic.url %}" alt="Profile Pic" height="40px" width="40px" />
+          {% else %}
+            <!-- Provide a placeholder or default image if 'profile_pic' is not set -->
+            <img src="{% static 'path/to/placeholder_image.jpg' %}" alt="Default Image" height="40px" width="40px" />
+          {% endif %}
+        </td>
+        <td>{{ c.mobile }}</td>
+        <td>{{ c.address }}</td>
+        <td><a class="btn btn-primary btn-xs" href="{% url 'update-customer' c.id %}"><span class="glyphicon glyphicon-edit"></span></a></td>
+        <td><a class="btn btn-danger btn-xs" href="{% url 'delete-customer' c.id %}"><span class="glyphicon glyphicon-trash"></span></a></td>
       </tr>
       {% endfor %}
     </table>
+    
   </div>
 </div>
 <!--
